@@ -32,7 +32,10 @@ Template.body.events({
     // Get value from form element
     const target = event.target;
     const text = target.text.value;
- 
+	
+  // Insert a task into the collection
+    Meteor.call('tasks.insert', text);
+	
     // Insert a task into the collection
     Tasks.insert({
       text,
